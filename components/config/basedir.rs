@@ -32,6 +32,11 @@ pub fn default_config_dir() -> Option<PathBuf> {
     Some(PathBuf::from(dir.to_str().unwrap()))
 }
 
+#[cfg(target_os = "ios")]
+pub fn default_config_dir() -> Option<PathBuf> {
+    None
+}
+
 #[cfg(all(unix, not(target_os = "macos"), not(target_os = "ios"), not(target_os = "android")))]
 pub fn default_data_dir() -> Option<PathBuf> {
     let xdg_dirs = xdg::BaseDirectories::with_profile("servo", "default").unwrap();
@@ -46,6 +51,11 @@ pub fn default_data_dir() -> Option<PathBuf> {
         CStr::from_ptr((*android_injected_glue::get_app().activity).internalDataPath)
     };
     Some(PathBuf::from(dir.to_str().unwrap()))
+}
+
+#[cfg(target_os = "ios")]
+pub fn default_data_dir() -> Option<PathBuf> {
+    None
 }
 
 #[cfg(all(unix, not(target_os = "macos"), not(target_os = "ios"), not(target_os = "android")))]
@@ -64,6 +74,11 @@ pub fn default_cache_dir() -> Option<PathBuf> {
         CStr::from_ptr((*android_injected_glue::get_app().activity).externalDataPath)
     };
     Some(PathBuf::from(dir.to_str().unwrap()))
+}
+
+#[cfg(target_os = "ios")]
+pub fn default_cache_dir() -> Option<PathBuf> {
+    None
 }
 
 #[cfg(target_os = "macos")]
