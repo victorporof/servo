@@ -30,23 +30,23 @@ servo = ["serde", "heapsize", "heapsize_derive",
 gecko_debug = ["nsstring_vendor/gecko_debug"]
 
 [dependencies]
-app_units = "0.5.5"
+app_units = { git = "https://github.com/victorporof/app_units.git", branch = "0.5.5-heapsize" }
 arrayvec = "0.3.20"
 atomic_refcell = "0.1"
 bitflags = "0.7"
 byteorder = "1.0"
 cfg-if = "0.1.0"
-cssparser = "0.21.2"
+cssparser = { git = "https://github.com/victorporof/rust-cssparser.git", branch = "0.21.1-heapsize" }
 encoding = {version = "0.2", optional = true}
-euclid = "0.15"
+euclid = { git = "https://github.com/victorporof/euclid.git", branch = "0.15-heapsize" }
 fallible = { path = "../fallible" }
 fnv = "1.0"
 hashglobe = { path = "../hashglobe" }
-heapsize = {version = "0.4", optional = true}
+heapsize = { git = "https://github.com/victorporof/heapsize.git", branch = "0.4.1-heapsize", optional = true }
 heapsize_derive = {version = "0.1", optional = true}
 itertools = "0.5"
 itoa = "0.3"
-html5ever = {version = "0.19", optional = true}
+html5ever = { git = "https://github.com/victorporof/html5ever.git", branch = "0.19-heapsize", optional = true }
 lazy_static = "0.2"
 lru_cache = { path = "../lru_cache" }
 log = "0.3"
@@ -69,7 +69,7 @@ servo_arc = { path = "../servo_arc" }
 servo_atoms = {path = "../atoms", optional = true}
 servo_config = {path = "../config", optional = true}
 smallbitvec = "1.0.6"
-smallvec = "0.4"
+smallvec = { git = "https://github.com/victorporof/rust-smallvec.git", branch = "0.4-heapsize" }
 style_derive = {path = "../style_derive"}
 style_traits = {path = "../style_traits"}
 servo_url = {path = "../url", optional = true}

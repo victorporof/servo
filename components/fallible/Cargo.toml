@@ -10,7 +10,7 @@ name = "fallible"
 path = "lib.rs"
 
 [dependencies]
-smallvec = "0.4"
+smallvec = { git = "https://github.com/victorporof/rust-smallvec.git", branch = "0.4-heapsize" }
 hashglobe = { path = "../hashglobe" }
 
 # This crate effectively does nothing except if the `known_system_malloc`

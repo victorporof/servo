@@ -9,9 +9,9 @@ publish = false
 path = "lib.rs"
 
 [dependencies]
-app_units = "0.5.5"
-cssparser = "0.21.1"
-euclid = "0.15"
+app_units = { git = "https://github.com/victorporof/app_units.git", branch = "0.5.5-heapsize" }
+cssparser = { git = "https://github.com/victorporof/rust-cssparser.git", branch = "0.21.1-heapsize" }
+euclid = { git = "https://github.com/victorporof/euclid.git", branch = "0.15-heapsize" }
 hashglobe = { path = "../hashglobe" }
 servo_arc = { path = "../servo_arc" }
 smallbitvec = "1.0.3"

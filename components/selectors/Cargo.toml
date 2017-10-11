@@ -25,7 +25,7 @@ unstable = []
 [dependencies]
 bitflags = "0.7"
 matches = "0.1"
-cssparser = "0.21.1"
+cssparser = { git = "https://github.com/victorporof/rust-cssparser.git", branch = "0.21.1-heapsize" }
 log = "0.3"
 fnv = "1.0"
 malloc_size_of = { path = "../malloc_size_of" }
@@ -34,7 +34,7 @@ lru_cache = { path = "../lru_cache" }
 phf = "0.7.18"
 precomputed-hash = "0.1"
 servo_arc = { path = "../servo_arc" }
-smallvec = "0.4"
+smallvec = { git = "https://github.com/victorporof/rust-smallvec.git", branch = "0.4-heapsize" }
 
 [dev-dependencies]
 size_of_test = {path = "../size_of_test"}

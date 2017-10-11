@@ -11,7 +11,7 @@ readme = "README.md"
 
 [dependencies]
 libc = "0.2"
-heapsize = "0.4"
+heapsize = { git = "https://github.com/victorporof/heapsize.git", branch = "0.4.1-heapsize" }
 
 [dev-dependencies]
 rand = "0.3"

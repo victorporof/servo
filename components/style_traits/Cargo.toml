@@ -14,11 +14,11 @@ servo = ["heapsize", "heapsize_derive", "serde", "servo_atoms", "cssparser/heaps
 gecko = []
 
 [dependencies]
-app_units = "0.5"
+app_units = { git = "https://github.com/victorporof/app_units.git", branch = "0.5.5-heapsize" }
 bitflags = "0.7"
-cssparser = "0.21.1"
-euclid = "0.15"
-heapsize = {version = "0.4", optional = true}
+cssparser = { git = "https://github.com/victorporof/rust-cssparser.git", branch = "0.21.1-heapsize" }
+euclid = { git = "https://github.com/victorporof/euclid.git", branch = "0.15-heapsize" }
+heapsize = { git = "https://github.com/victorporof/heapsize.git", branch = "0.4.1-heapsize", optional = true }
 heapsize_derive = {version = "0.1", optional = true}
 malloc_size_of = { path = "../malloc_size_of" }
 malloc_size_of_derive = { path = "../malloc_size_of_derive" }

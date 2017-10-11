@@ -10,10 +10,10 @@ name = "servo_url"
 path = "lib.rs"
 
 [dependencies]
-heapsize = {version = "0.4"}
+heapsize = { git = "https://github.com/victorporof/heapsize.git", branch = "0.4.1-heapsize" }
 heapsize_derive = {version = "0.1"}
 serde = {version = "1.0"}
 servo_rand = {path = "../rand"}
-url = {version = "1.2", features = ["heap_size"]}
-url_serde = {version = "0.2"}
+url = { git = "https://github.com/victorporof/rust-url.git", branch = "1.2-heapsize", features = ["heap_size"] }
+url_serde = { git = "https://github.com/victorporof/rust-url.git", branch = "1.4.1-serde-heapsize" }
 uuid = {version = "0.5.0", features = ["v4", "serde"]}
