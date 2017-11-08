@@ -6,7 +6,6 @@
 
 use cssparser::{BasicParseError, Parser, Token};
 use parser::{Parse, ParserContext};
-use std::ascii::AsciiExt;
 use std::fmt;
 use style_traits::{ParseError, ToCss};
 use style_traits::values::specified::AllowedNumericType;

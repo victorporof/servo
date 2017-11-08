@@ -767,7 +767,7 @@ fn select_name<'a, T>(is_html: bool, local_name: &'a T, local_name_lower: &'a T)
 
 #[inline]
 fn matches_generic_nth_child<E, F>(element: &E,
-                                   context: &mut LocalMatchingContext<E::Impl>,
+                                   _context: &mut LocalMatchingContext<E::Impl>,
                                    a: i32,
                                    b: i32,
                                    is_of_type: bool,

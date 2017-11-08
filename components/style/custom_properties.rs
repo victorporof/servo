@@ -13,7 +13,6 @@ use parser::ParserContext;
 use properties::{CSSWideKeyword, DeclaredValue};
 use selectors::parser::SelectorParseError;
 use servo_arc::Arc;
-use std::ascii::AsciiExt;
 use std::borrow::{Borrow, Cow};
 use std::fmt;
 use std::hash::Hash;

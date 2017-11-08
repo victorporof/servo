@@ -7,7 +7,6 @@
 
 use cssparser::{Parser, Token, BasicParseError};
 use parser::{Parse, ParserContext};
-use std::ascii::AsciiExt;
 use std::mem;
 use style_traits::{ParseError, StyleParseError};
 use values::{CSSFloat, CustomIdent};
