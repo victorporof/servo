@@ -25,5 +25,5 @@ servo_geometry = {path = "../geometry", features = ["servo"]}
 servo_url = {path = "../url"}
 style_traits = {path = "../style_traits"}
 time = "0.1.17"
-webrender = {git = "https://github.com/servo/webrender"}
-webrender_api = {git = "https://github.com/servo/webrender", features = ["ipc"]}
+webrender = {git = "https://github.com/victorporof/webrender.git"}
+webrender_api = {git = "https://github.com/victorporof/webrender.git", features = ["ipc"]}
