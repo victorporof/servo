@@ -47,18 +47,18 @@ extern crate app_units;
 extern crate cssparser;
 extern crate euclid;
 extern crate hashglobe;
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_js")]
 extern crate mozjs as js;
 extern crate servo_arc;
 extern crate smallbitvec;
 extern crate smallvec;
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_string_cache")]
 extern crate string_cache;
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_url")]
 extern crate url;
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 extern crate webrender_api;
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_xml5ever")]
 extern crate xml5ever;
 
 use std::hash::{BuildHasher, Hash};
@@ -640,7 +640,7 @@ impl<T: MallocSizeOf, U> MallocSizeOf for euclid::TypedVector2D<T, U> {
     }
 }
 
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_string_cache")]
 impl<Static: string_cache::StaticAtomSet> MallocSizeOf for string_cache::Atom<Static> {
     fn size_of(&self, _ops: &mut MallocSizeOfOps) -> usize {
         0
@@ -649,7 +649,7 @@ impl<Static: string_cache::StaticAtomSet> MallocSizeOf for string_cache::Atom<St
 
 // This is measured properly by the heap measurement implemented in
 // SpiderMonkey.
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_js")]
 impl<T: Copy + js::rust::GCMethods> MallocSizeOf for js::jsapi::Heap<T> {
     fn size_of(&self, _ops: &mut MallocSizeOfOps) -> usize {
         0
@@ -697,7 +697,7 @@ malloc_size_of_is_0!(app_units::Au);
 
 malloc_size_of_is_0!(cssparser::RGBA, cssparser::TokenSerializationType);
 
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_url")]
 impl MallocSizeOf for url::Host {
     fn size_of(&self, ops: &mut MallocSizeOfOps) -> usize {
         match *self {
@@ -707,32 +707,32 @@ impl MallocSizeOf for url::Host {
     }
 }
 
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::ClipAndScrollInfo);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::ClipId);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::ColorF);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::GradientStop);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::ImageKey);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::LocalClip);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::MixBlendMode);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::RepeatMode);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::ScrollPolicy);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::ScrollSensitivity);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::StickyOffsetBounds);
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_webrender")]
 malloc_size_of_is_0!(webrender_api::TransformStyle);
 
-#[cfg(feature = "servo")]
+#[cfg(feature = "with_xml5ever")]
 impl MallocSizeOf for xml5ever::QualName {
     fn size_of(&self, ops: &mut MallocSizeOfOps) -> usize {
         self.prefix.size_of(ops) +
